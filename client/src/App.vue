@@ -45,11 +45,6 @@ export default {
   mounted() {
     this.fetchData();
 
-    // eventBus.$on("guest-deleted", id => {
-    //   GuestService.deleteGuest(id);
-    //   const index = this.guests.findIndex(guest => guest._id === id);
-    //   this.guests.splice(index, 1);
-    // });
     eventBus.$on("guest-deleted", id => {
       let index = this.guests.findIndex(guest => guest._id === id);
       this.guests.splice(index, 1);
