@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <main-header></main-header>
+    <guest-form></guest-form>
     <div v-for="(guest ,index) in guests" :guest="guest" :key="index">
       <ul>
         <li>{{ guest.name }}</li>
@@ -16,6 +17,7 @@
 import GuestService from "./services/GuestService.js";
 import MainHeader from "./components/layouts/Main-Header";
 import MainFooter from "./components/layouts/Main-Footer";
+import GuestForm from './components/GuestForm';
 export default {
   name: "app",
   data() {
@@ -25,12 +27,14 @@ export default {
   },
   components: {
     "main-header": MainHeader,
-    "main-footer": MainFooter
+    "main-footer": MainFooter,
+    "guest-form": GuestForm
   },
   methods: {
     fetchData() {
       GuestService.getGuests().then(guests => (this.guests = guests));
     },
+    
   },
   mounted() {
     this.fetchData();
