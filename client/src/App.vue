@@ -30,7 +30,7 @@ export default {
   methods: {
     fetchData() {
       GuestService.getGuests().then(guests => (this.guests = guests));
-    }
+    },
   },
   mounted() {
     this.fetchData();
