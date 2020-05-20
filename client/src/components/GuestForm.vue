@@ -29,7 +29,7 @@ export default {
       const guest = {
         name: this.name,
         email: this.email,
-        checked_in: this.checked
+        checked_in: this.checked_in
       };
       GuestService.postGuest(guest).then(res => eventBus.$emit("guest-added", res));
     }
