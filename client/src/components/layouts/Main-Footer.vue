@@ -1,5 +1,6 @@
 <template>
   <p>Copyright 2020</p>
+  
 </template>
 
 <script>
